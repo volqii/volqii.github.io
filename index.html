@@ -19,18 +19,7 @@
         <link rel="stylesheet" href="font-awesome.min.css">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu&effect=emboss' rel='stylesheet' type='text/css'>
 </head>
-<?php
-$socket = stream_socket_server("tcp://0.0.0.0:8000", $errno, $errstr);
-if (!$socket) {
-  echo "$errstr ($errno)<br />\n";
-} else {
-  while ($conn = stream_socket_accept($socket)) {
-    fwrite($conn, 'The local time is ' . date('n/j/Y g:i a') . "\n");
-    fclose($conn);
-  }
-  fclose($socket);
-}
-?>
+
 <body>
     <h1 id="tepe" class="font-effect-emboss">&nbsp; &nbsp; &nbsp;</h1>
     <h2 class="font-effect-emboss" id="ha2"></h2>
